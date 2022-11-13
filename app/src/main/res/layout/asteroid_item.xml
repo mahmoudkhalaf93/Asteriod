@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="asteroid"
+            type="com.example.asteriod.Asteroid" />
+        <variable
+            name="asteroidOnClick"
+            type="com.example.asteriod.main.AsteroidAdapter.AsteroidClickListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:onClick="@{()-> asteroidOnClick.onClick(asteroid)}"
+        android:padding="@dimen/_16sdp">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold"
+            android:text="@{asteroid.codename}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="68372 (2001 KB67)" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:textColor="@color/text_grey"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold"
+            android:text="@{asteroid.closeApproachDate}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:text="2022/02/08" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/ic_status_potentially_hazardous"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:statusIcon="@{asteroid.potentiallyHazardous}"
+             />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
