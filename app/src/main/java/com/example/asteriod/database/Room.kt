@@ -19,7 +19,7 @@ interface AsteroidDao {
     fun getTodayAsteroids(today: String): LiveData<List<AsteroidDbModel>>
 
     @Query("Delete from asteroid WHERE close_approach_date < :today ")
-    fun deleteOldAsteroid(today: String): LiveData<List<AsteroidDbModel>>
+    fun deleteOldAsteroid(today: String)
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
