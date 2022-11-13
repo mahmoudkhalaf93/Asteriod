@@ -14,7 +14,7 @@ import retrofit2.http.GET
 
 
 interface ImageOfThedayService {
-    @GET("planetary/apod?api_key=b8rymr8mDdf7PMdEGcZ8NgmdANWOxOPAUYMNiunr")
+    @GET("planetary/apod?api_key=enter_your_key")
     fun getPhoto(): Deferred<PictureOfDay>
 //    @GET("devbytes.json")
 //    fun getPlaylist(): Deferred<NetworkVideoContainer>
